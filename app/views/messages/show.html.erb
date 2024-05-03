@@ -1,6 +1,10 @@
 <h2><%= @message.title%></h2>
 <p><%= @message.description%></p>
 
+<%= render @message.comments%>
+<h3>Reply</h3>
+<%= render 'comments/form'%>
+
 <%=link_to "Edit", edit_message_path(@message)%>
 <%=link_to "Home", root_path%>
 <%=link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure you wan to permanently delete this note" }%>
