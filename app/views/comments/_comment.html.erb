@@ -1,5 +1,15 @@
-<div style="background-color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border: 1px solid #ddd;">
-  <p style="font-size: 16px; line-height: 1.5; margin-bottom: 8px;"><%= comment.content %></p>
-  <div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="background-color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border: 1px solid #ddd; position: relative;">
+    <p style="font-size: 16px; line-height: 1.5; margin-bottom: 8px;"><%= comment.content %></p>
+    <div style="display: flex; justify-content: flex-end;">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Options
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        
+          <li><%= link_to 'Edit', edit_message_comment_path(comment), class: 'dropdown-item' %></li>
+          <li><%= link_to 'Delete', message_comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %></li>
+        </div>
+      </div>
+    </div>
   </div>
-</div>

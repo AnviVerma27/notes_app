@@ -1,5 +1,42 @@
-<%= simple_form_for @message do |f| %>
-    <%= f.input :title, label: "Message Title"%>
-    <%= f.input :description, label: "Description"%>
-    <%= f.button :submit%>
-<%end%>
+<style>
+  .form-container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container input[type="text"],
+  .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .form-container button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .form-container button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<div class="form-container">
+  <%= simple_form_for @message do |f| %>
+    <%= f.input :title, label: "Message Title" %>
+    <%= f.text_area :description, label: "Description",rows: '10' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
