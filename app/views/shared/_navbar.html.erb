@@ -1,13 +1,25 @@
 <div class="navbar navbar-default custom-navbar">
-    <div class="container ">
-        <div class="navbar-header ">
-            <%= link_to "Notes Taking App", root_path, class: "navbar-brand navbar-brand-custom"%>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Sign Up", new_user_registration_path%></li>
-            <% if user_signed_in? %>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :DELETE%></li>
-            <%end%>
-        </ul>
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Notes Taking App", root_path, class: "navbar-brand navbar-brand-custom"%>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <%= form_for(current_user, url: destroy_user_session_path, method: :delete, class: "position-absolute end-0") do |f| %>
+          <%= f.submit "Sign out", class: "btn btn-outline-danger sign-out-btn", style: "margin-top: 2rem;" %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>
+
+<style>
+  .sign-out-btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .sign-out-btn:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+</style>

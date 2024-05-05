@@ -1,7 +1,11 @@
 class MessagesController < ApplicationController
 
     def index
-        @message = current_user.messages.order("created_at DESC")
+        if current_user
+            @message = current_user.messages.order("created_at DESC")
+        else
+            render 'home'
+        end
     end
 
     def new
