@@ -1,8 +1,13 @@
-<h1>Welcome</h1>
-
-<% @message.each do |message| %>
-<h2><%= message.title%></h2>
-<%= link_to "View Message", message_path(message), class: "btn btn-default"%> 
-<%end%>
-
-<%= link_to "New Message", new_message_path%>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; margin: 20px;">
+  <% @message.each do |message| %>
+    <div style="background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 20px; margin: 10px; width: 300px; text-align: center;">
+      <h2 style="font-size: 1.4rem; margin-bottom: 10px;"><%= message.title %></h2>
+      <%= link_to "View Message", message_path(message), class: "btn btn-primary", style: "margin-top: 10px;" %>
+    </div>
+  <% end %>
+  <div style="position: fixed; top: 100px; right: 100px;">
+    <%= link_to new_message_path, class: "btn btn-success", style: "padding: 10px 15px; display: flex; align-items: center;" do %>
+      <i class="fas fa-plus" style="margin-right: 5px;"></i> New Message
+    <% end %>
+  </div>
+</div>

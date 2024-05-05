@@ -1,4 +1,10 @@
-<%= simple_form_for([@message, @message.comments.build]) do |f|%>
-<%= f.input :content, label: "Comment"%>
-<%=f.button :submit%>
-<%end%>
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+  <%= simple_form_for([@message, @message.comments.build]) do |f| %>
+    <div style="margin-bottom: 20px;">
+      <%= f.input :content, label: "Add Comment", input_html: { class: "form-control", style: "border-radius: 4px; padding: 10px;" }, label_html: { class: "font-weight-bold" } %>
+    </div>
+    <div style="text-align: right;">
+      <%= f.button :submit, "Submit Comment", class: "btn btn-primary", style: "padding: 8px 16px; border-radius: 4px;" %>
+    </div>
+  <% end %>
+</div>

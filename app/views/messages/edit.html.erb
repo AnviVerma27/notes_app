@@ -1,3 +1,16 @@
-<h2>Edit mesaage</h2>
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+  <h2 style="font-size: 1.8rem; margin-bottom: 20px;">Edit Message</h2>
+  <%= form_with(model: @message, local: true) do |form| %>
+    <div class="form-group">
+      <%= form.label :title, style: "font-weight: bold;" %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
 
-<%= render 'form'%>
+    <div class="form-group">
+      <%= form.label :description, style: "font-weight: bold;" %>
+      <%= form.text_area :description, class: "form-control text-justified", rows: "auto", style: "resize: vertical; overflow: auto;" %>
+    </div>
+
+    <%= form.submit "Update Message", class: "btn btn-primary" %>
+  <% end %>
+</div>

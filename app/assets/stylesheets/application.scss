@@ -1,2 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-brand-custom {
+    padding-top: 2.8rem;
+    font-size: 3.0rem; /* Increase the font size of the app name */
+}
+
+.custom-navbar {
+    min-height: 70px; /* Increase the minimum height of the navbar */
+}
+

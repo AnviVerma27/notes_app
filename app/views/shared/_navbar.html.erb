@@ -1,0 +1,13 @@
+<div class="navbar navbar-default custom-navbar">
+    <div class="container ">
+        <div class="navbar-header ">
+            <%= link_to "Notes Taking App", root_path, class: "navbar-brand navbar-brand-custom"%>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Sign Up", new_user_registration_path%></li>
+            <% if user_signed_in? %>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :DELETE%></li>
+            <%end%>
+        </ul>
+    </div>
+</div>
