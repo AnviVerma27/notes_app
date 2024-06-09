@@ -12,6 +12,10 @@
   
   <div style="display: flex; justify-content: space-between; margin-top: 20px;">
     <%= link_to "Edit", edit_message_path(@message), class: "btn btn-primary" %>
-    <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure you want to permanently delete this note?" }, class: "btn btn-danger" %>
+    <%
+=begin%>
+ <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure you want to permanently delete this note?" }, class: "btn btn-danger" %> 
+<%
+=end%>
   </div>
 </div>
